@@ -314,7 +314,7 @@ def  label_slicing(img,ddd):
         cv2.rectangle(ss, (box[0][0], box[1][0]), (box[0][1], box[1][1] ), (0, 255, 0), 2)
     cv2.imshow('rrrrrrrrrrrrr', ss)"""
     # box  format : [(x,y),(x',y')] ==> (point1 , point2)
-    return ssh
+    return ssh+ssv
 
 def main():
 
@@ -353,11 +353,11 @@ def main():
 
         tt=ss[min(box[1][0], box[1][1]):max(box[1][0], box[1][1]),
            min(box[0][0],box[0][1]):max(box[0][0],box[0][1])]
-        cv2.imwrite(link + '/' + i + '.png', tt)
+        cv2.imwrite("detect_result"+ '/' +str( i )+ '.png', tt)
         print(tt.shape)
         #cv2.imshow('the result of grouprect', tt)
-    cv2.rectangle(ss, (box[0][0], box[1][0]), (box[0][1], box[1][1]), (0, 255, 0), 2)
-    cv2.imwrite(link + '/image.png', img)
+        cv2.rectangle(ss, (box[0][0], box[1][0]), (box[0][1], box[1][1]), (0, 255, 0), 2)
+    cv2.imwrite("detect_result"+ '/image.png', ss)
     #cv2.waitKey(0)
     #cv2.destroyAllWindows()
 main()
